@@ -6,4 +6,5 @@ The new expedition for programming.
 
 
 #noticement#
-The period of revision is erratic.
+
+The revision is erratic.
