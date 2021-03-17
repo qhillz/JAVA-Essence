@@ -8,7 +8,7 @@
 
 # ENUM
 
-``` bash
+``` java
 package day3;  //정해진 값, 정해진 갯수의 데이터 열거한다.
 public enum Week {
 	Mon,Tue,Wed,Thr,Fri,Sat,Sun
