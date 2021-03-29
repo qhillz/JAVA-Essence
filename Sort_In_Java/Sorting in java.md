@@ -75,7 +75,7 @@ This method doesn't return anything
 
 * This class consists exclusively of static methods that operate on or return collections.  It contains polymorphic algorithms that operate on collections, "wrappers", which return a new collection backed by a specified collection, and a few other odds and ends. 
 
-  * 결과적으로, Java.util패키지의 Collections클래스의 public abstract sort 메소드가 기능을 운영한다.
+  * 결과적으로, Java.util패키지의 Collections클래스의 public static sort 메소드가 기능을 운영한다.
 
     ### 중요사항 
 
