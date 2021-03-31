@@ -152,7 +152,7 @@ This method doesn't return anything
   }
       ```
     
-      ![cc](mid-images/cc.png)
+      ![cc](./mid-images/cc.png)
 
 =====>  **상위의 동작은 위의 그림처럼 내부적으로 작동하게 된다.**
 
