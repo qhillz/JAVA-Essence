@@ -86,7 +86,7 @@ This method doesn't return anything
   * **All elements in the list must implement the Comparable interface. Furthermore, all elements in the list must be mutually comparable (that is, e1.compareTo(e2))**
 
     * 예를 들어, ArrayList안의 값이 제내릭 설정이 안돼서 다양한 타입의 Object를 품고 있다면 Comparable 하지 못하기 때문에 오류가 난다.
-    * ![Java 객체 정렬과 비교](https://media.vlpt.us/images/agugu95/post/a43189f8-835e-406b-af21-6ffe68188552/image.png)
+    * ![Java 객체 정렬과 비교](mid-images/image.png)
 
     **List의 값은 Comparable을 Implement한 원소이어야 하는게 또한 조건.**
 
@@ -152,7 +152,7 @@ This method doesn't return anything
   }
       ```
     
-      ![Comparable_example2](https://dzone.com/storage/temp/2981074-comparable-example2.png)
+      ![Comparable_example2](mid-images/2981074-comparable-example2.png)
 
 =====>  **상위의 동작은 위의 그림처럼 내부적으로 작동하게 된다.**
 
