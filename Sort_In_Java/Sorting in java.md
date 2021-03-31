@@ -152,7 +152,7 @@ This method doesn't return anything
   }
       ```
     
-      ![Comparable_example2](mid-images/2981074-comparable-example2.png)
+      ![2981074-comparable-example2](mid-images/2981074-comparable-example2.png)
 
 =====>  **상위의 동작은 위의 그림처럼 내부적으로 작동하게 된다.**
 
@@ -167,6 +167,8 @@ This method doesn't return anything
 **--답--**
 
 이유는 list의 맴버 변수가 1개가 아니기 때문에 어떤 것을 정렬해야할지 정하지 못한다. 고로, Comparable을 implement하여 비교할 값을 확실히 정해줘야만 가능한 일이다.
+
+
 
 ## Comparable VS Comparator
 
