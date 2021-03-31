@@ -73,6 +73,10 @@ myList : A List type object we want to sort.
 This method doesn't return anything
 ```
 
+​																									(**List 형 구조도**)
+
+![List-ArrayList-in-Java-In-Depth-Study](mid-images/List-ArrayList-in-Java-In-Depth-Study.png)
+
 * This class consists exclusively of static methods that operate on or return collections.  It contains polymorphic algorithms that operate on collections, "wrappers", which return a new collection backed by a specified collection, and a few other odds and ends. 
 
   * 결과적으로, Java.util패키지의 Collections클래스의 public static sort 메소드가 기능을 운영한다.
@@ -88,8 +92,10 @@ This method doesn't return anything
 
     **Comparable 인터페이스는 compareTo() 메소드를 소지하며 이를 각 Class는 적절하게 오버라이딩 하였고 더불어 나가서, 사용자가 재정의해서 사용 가능하다.** 
 
-    **궁극적으로, Collections.sort()는 Comparable<Interface>에서 형태가 제공된 compareTo()를 오버라이딩한 List의 원소에 의존하여 정렬을 진행한다.**
+    **궁극적으로, Collections.sort()는 Comparable<Interface>을 implement한 여러 기본형 클래스들의 오버라이딩 된compareTo()를  List의 원소에 의존하여 정렬을 진행한다.**
 
+    ![캡처](mid-images/%EC%BA%A1%EC%B2%98.PNG)
+    
     * ```java
       // A Java program to demonstrate use of Comparable
       import java.io.*;
@@ -143,12 +149,24 @@ This method doesn't return anything
                                      movie.getYear());
               }
           }
-      }
+  }
       ```
-
+    
       ![Comparable_example2](https://dzone.com/storage/temp/2981074-comparable-example2.png)
 
 =====>  **상위의 동작은 위의 그림처럼 내부적으로 작동하게 된다.**
+
+
+
+#### 생각하기
+
+상위의 list형은 ArrayList클래스로서 그냥 Collections.sort()에 삽입해서 실행시키면 되는 거 아닌가? 왜 굳이 implements를 하는가?
+
+
+
+**--답--**
+
+이유는 list의 맴버 변수가 1개가 아니기 때문에 어떤 것을 정렬해야할지 정하지 못한다. 고로, Comparable을 implement하여 비교할 값을 확실히 정해줘야만 가능한 일이다.
 
 ## Comparable VS Comparator
 
@@ -164,7 +182,7 @@ This method doesn't return anything
 
 **public int compare(Object obj1, Object obj2)**
 
-----------------------**코드**----------------------
+​																					----------------------**코드**----------------------
 
 ``` java 
 //A Java program to demonstrate Comparator interface
@@ -198,7 +216,7 @@ class Movie implements Comparable<Movie>
     public int getYear()      {  return year;  }
 }
  
-// Class to compare Movies by ratings
+// Class to compare Movies by ratings Sub기능
 class RatingCompare implements Comparator<Movie>
 {
     public int compare(Movie m1, Movie m2)
@@ -209,7 +227,7 @@ class RatingCompare implements Comparator<Movie>
     }
 }
  
-// Class to compare Movies by name
+// Class to compare Movies by name Sub기능
 class NameCompare implements Comparator<Movie>
 {
     public int compare(Movie m1, Movie m2)
@@ -264,4 +282,4 @@ class Main
 
 ## SUMMARY
 
-두 개의 오브젝트를 받아서 더욱 다양한 비교를 실현해낸다. Comparable 인터페이스 활용시 Movie Class의 Year을 비교하는 정렬을 하는 등 한 가지 elements에 대한 비교만이 가능하지만 (Overloading이 불가, 고로 Year,Name,Rate 3개중 1개 선택 제한.) Comparator 인터페이스 활용시 더 나아가 다양한 elements에 대한 비교를 만들 수 있다.  (Year를 Comparable로 만들었다면, 나머지는 Comparator로 커버가 가능하다.) 그리고, Comparator 사용 시 Collections.sort(List,Class) ===> 곧, Class가 들어가야 하므로 이들을 Comparator Implements 받아 재정의해서 입력해 줘야한다.
+두 개의 오브젝트를 받아서 더욱 다양한 비교를 실현해낸다. Comparable 인터페이스 활용시 Movie Class의 Year을 비교하는 정렬을 하는 등 한 가지 elements에 대한 비교만이 가능하지만 (Overloading이 불가, 고로 Year,Name,Rate 3개중 1개 선택 제한.) Comparator 인터페이스 활용시 더 나아가 다양한 elements에 대한 비교를 만들 수 있다.  (Year를 Comparable로 만들었다면, 나머지는 Comparator로 커버가 가능하다.) 그리고, Comparator 사용  시 Collections.sort(List,Class) ===> 곧, Class가 들어가야 하므로 이들을 Comparator Implements 받아 재정의해서 입력해 줘야한다.
